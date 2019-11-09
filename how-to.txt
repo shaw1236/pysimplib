@@ -1,0 +1,36 @@
+-- Folder structure:
+setup.py
+README.md
+LICENSE
+simonpysimplib/__init__.py
+               mymath.py
+
+-- Module required: pip, wheel, twine, keyring
+
+-- keyring
+pip install --user keyring
+$keyring set https://test.pypi.org/legacy/ your-username
+$keyring set https://upload.pypi.org/legacy/ your-usernam
+
+-- Step
+$python setup.py sdist bdist_wheel
+$python -m twine upload --skip-existing --verbose --repository-url https://test.pypi.org/legacy/ dist/*
+$pip install --index-url https://test.pypi.org/simple/ --no-deps simonpysimplib-shaw1236
+
+-- Check 
+https://test.pypi.org/project/simonpysimplib-shaw1236/<version>/
+C:\Python38\Lib\site-packages\simonpysimplib
+$python
+$>>> from simonpysimplib import mymath
+$>>> mymath.mymul(3, 4)
+12
+
+-- Live
+$python -m twine upload dist/*
+$pip install simonpysimplib-shaw1236
+
+-- Reference
+https://packaging.python.org/tutorials/packaging-projects/
+https://pypi.org/project/twine/
+https://test.pypi.org/project
+https://pypi.org/project

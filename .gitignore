@@ -1,2 +1,6 @@
+build/
 dist/
 *.egg-info/
+*.*~
+simonpysimplib/__pycache__
+__*
